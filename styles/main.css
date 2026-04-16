@@ -1,0 +1,149 @@
+section {
+  display: grid;
+  padding: 3rem 1.5rem 3rem 1.5rem;
+  gap: 1.5rem;
+
+  hgroup {
+    display: grid;
+    gap: 0.3rem;
+
+    p:nth-of-type(1) {
+      font-size: var(--fs-small);
+      letter-spacing: 2px;
+    }
+  }
+
+  &:nth-of-type(1) {
+    span {
+      border-radius: var(--br);
+      font-size: var(--fs-small);
+      border: 1px solid var(--c-p);
+      padding: 0.5rem;
+      width: max-content;
+      letter-spacing: 2px;
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      li {
+        border: 1px solid var(--c-p);
+        padding: 0.5rem;
+        font-size: var(--fs-small);
+        border-radius: var(--br);
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    background: var(--c-bg-black);
+    overflow: hidden;
+    padding: 1.5rem;
+    display: grid;
+    place-content: center;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      width: 100%;
+      list-style: none;
+      animation: scroll 10s linear infinite;
+
+      li {
+        color: var(--c-scroll);
+        font-size: var(--fs-scroll);
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  &:nth-of-type(3) {
+    ul {
+      display: grid;
+      gap: 1rem;
+      list-style: none;
+
+      li {
+        h3 {
+          font-weight: bold;
+          margin-bottom: 0.3rem;
+        }
+      }
+    }
+  }
+
+  &:nth-of-type(4) {
+    article {
+      display: grid;
+      grid-template-areas: "dag band band ticket";
+
+      div {
+        &:nth-of-type(1) {
+          grid-area: dag;
+          background: black;
+          width: max-content;
+          padding: 0.3rem;
+          aspect-ratio: 1/1;
+          text-align: center;
+
+          p {
+            color: white;
+          }
+        }
+
+        &:nth-of-type(2) {
+          grid-area: band;
+        }
+
+        &:nth-of-type(3) {
+          grid-area: ticket;
+          align-self: center;
+        }
+      }
+
+      div:nth-of-type(2) {
+      }
+
+      div:nth-of-type(3) {
+      }
+    }
+  }
+
+  &:nth-of-type(5) {
+    article {
+      background: black;
+
+      p {
+        color: white;
+        padding: 1rem;
+      }
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+
+      label {
+        display: grid;
+        gap: 0.3rem;
+
+        input {
+          padding: 0.7rem 0.4rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
